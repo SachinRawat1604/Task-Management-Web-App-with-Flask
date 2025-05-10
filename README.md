@@ -74,9 +74,13 @@ Task-Management-Web-App-with-Flask/
 ├── static/
 │   └── style.css
 ├── templates/
-│   ├── index.html
-│   └── add.html
+│   ├── login.html
+│   ├── register.html
+│   ├── base.html
+│   ├── dashboard.html
+│   └── add_edit_task.html
 ├── main.py
+├── TaskManagement  (venv)
 ├── database.db
 ├── requirements.txt
 └── README.md
