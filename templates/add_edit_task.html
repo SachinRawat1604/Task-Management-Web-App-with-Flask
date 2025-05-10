@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Edit' if task else 'Add' }} Task{% endblock %}
+{% block content %}
+<h2>{{ 'Edit' if task else 'Add New' }} Task</h2>
+<form method="POST">
+    <div class="mb-3">
+        <input type="text" name="title" class="form-control" placeholder="Title" value="{{ task.title if task else '' }}" required>
+    </div>
+    <div class="mb-3">
+        <textarea name="description" class="form-control" placeholder="Description">{{ task.description if task else '' }}</textarea>
+    </div>
+    {% if task %}
+    <div class="mb-3">
+        <select name="status" class="form-control">
+            <option value="pending" {% if task.status == 'pending' %}selected{% endif %}>Pending</option>
+            <option value="completed" {% if task.status == 'completed' %}selected{% endif %}>Completed</option>
+        </select>
+    </div>
+    {% endif %}
+    <button class="btn btn-success">{{ 'Update' if task else 'Add' }} Task</button>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

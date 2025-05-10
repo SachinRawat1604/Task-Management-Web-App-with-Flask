@@ -1,0 +1,132 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #6e7dff, #00bcd4); /* Beautiful gradient background */
+    color: #fff; /* White text for contrast */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Make sure the background covers the entire screen */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #212529; /* Dark background for the navbar */
+}
+
+/* Navbar links */
+.navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+    color: #00bcd4; /* Highlight color when hovering */
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar a:hover {
+    color: #00bcd4; /* Highlight color when hovering */
+}
+
+/* Container for content */
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+    max-width: 1200px; /* Limit the width of the content */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading Styles */
+h1, h2 {
+    font-weight: 700;
+    color: #fff;
+    text-align: center; /* Centered headings */
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #00bcd4;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff5722; /* A bright color when hovering */
+    transform: scale(1.05); /* Slightly enlarge the button when hovering */
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #00bcd4;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff5722;
+}
+
+input:focus, textarea:focus {
+    border-color: #00bcd4;
+}
+
+/* Alerts */
+.alert {
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #212529;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar .navbar-brand {
+        font-size: 1.5rem; /* Adjust navbar brand font size for smaller screens */
+    }
+
+    .container {
+        padding: 15px; /* Reduce padding for smaller devices */
+    }
+
+    h1, h2 {
+        font-size: 1.5rem; /* Adjust heading size for smaller devices */
+    }
+
+    .btn {
+        width: 100%; /* Make buttons full width on small screens */
+    }
+}
