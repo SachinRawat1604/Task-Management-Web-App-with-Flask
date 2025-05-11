@@ -35,6 +35,8 @@ A simple and intuitive task management web application built using Flask. This a
    python -m venv venv
    ```
 
+   -TaskManagement is virtual environment of this project.
+
 4. **Activate the virtual environment**:
 
    * On Windows:
