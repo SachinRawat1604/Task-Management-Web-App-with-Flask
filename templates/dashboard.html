@@ -1,26 +1,22 @@
-{% extends "base.html" %}
-{% block title %}Dashboard{% endblock %}
+{% extends 'base.html' %}
 {% block content %}
-<h2 class="mb-4">Your Tasks</h2>
-<a href="{{ url_for('add_task') }}" class="btn btn-primary mb-3">+ Add Task</a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Title</th><th>Description</th><th>Status</th><th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="dashboard">
+    <h2>Your Tasks</h2>
+    <a class="add-btn" href="{{ url_for('add_task') }}">➕ Add New Task</a>
+    <div class="task-list">
         {% for task in tasks %}
-        <tr>
-            <td>{{ task.title }}</td>
-            <td>{{ task.description }}</td>
-            <td>{{ task.status }}</td>
-            <td>
-                <a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn btn-sm btn-warning">Edit</a>
-                <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn btn-sm btn-danger">Delete</a>
-            </td>
-        </tr>
+            <div class="task-card">
+                <h3>{{ task.title }}</h3>
+                <p>{{ task.description or "No Description" }}</p>
+                <p>Status: <strong>{{ task.status }}</strong></p>
+                <div class="task-actions">
+                    <a href="{{ url_for('edit_task', task_id=task.id) }}">✏️ Edit</a>
+                    <a href="{{ url_for('delete_task', task_id=task.id) }}">🗑️ Delete</a>
+                </div>
+            </div>
+        {% else %}
+            <p>No tasks yet. Create one!</p>
         {% endfor %}
-    </tbody>
-</table>
+    </div>
+</div>
 {% endblock %}

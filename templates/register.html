@@ -1,15 +1,12 @@
-{% extends "base.html" %}
-{% block title %}Register{% endblock %}
+{% extends 'base.html' %}
 {% block content %}
-<h2 class="mb-4">Create Account</h2>
-<form method="POST">
-    <div class="mb-3">
-        <input type="text" name="username" class="form-control" placeholder="Username" required>
-    </div>
-    <div class="mb-3">
-        <input type="password" name="password" class="form-control" placeholder="Password" required>
-    </div>
-    <button class="btn btn-primary">Register</button>
-    <a href="{{ url_for('login') }}" class="btn btn-link">Login Instead</a>
-</form>
+<div class="form-container">
+    <h2>Register</h2>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</div>
 {% endblock %}
